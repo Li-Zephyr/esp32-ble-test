@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESP32 BLE 最小通信测试</title>
+<style>
+body{font:17px/1.6 system-ui,sans-serif;max-width:680px;margin:24px auto;padding:0 18px;color:#17243b;background:#f5f8fc}
+section{background:white;padding:20px;border-radius:16px}button{font:inherit;padding:12px 16px;margin:6px 6px 6px 0;border-radius:10px;border:1px solid #9aabc4;background:#eaf2ff}button:disabled{opacity:.45}
+textarea{box-sizing:border-box;width:100%;font:inherit;padding:12px;border:1px solid #9aabc4;border-radius:10px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eaf0f8;padding:12px;font-size:13px}#reply{font-size:28px;color:#07583c}small{color:#54647b}
+</style>
+<script defer src="protocol.js"></script><script defer src="app.js"></script>
+</head>
+<body><h1>ESP32 BLE 文字测试</h1><section>
+<p>请在 <strong>BLE Link – Web BLE Browser</strong> 内打开此 HTTPS 页面。</p>
+<p id="status" role="status">正在检查环境…</p>
+<button id="connect" disabled>1. 连接 ESP32</button><button id="disconnect" disabled>断开</button>
+<label for="text"><p>发送文字（最多256字节）</p></label>
+<textarea id="text" rows="3">你好，ESP32</textarea>
+<p><small id="bytes"></small></p>
+<button id="send" disabled>2. 发送文字</button><button id="boundary">填入跨包测试文字</button>
+<p>设备回复：</p><div id="reply" aria-live="polite">尚未收到</div>
+<p><small>本页只测试BLE，不录音、不调用云服务。测试固件未启用加密绑定，请勿发送隐私数据。页面不自动重发；超时请断开重连。</small></p>
+</section><h2>诊断日志</h2><pre id="log"></pre>
+</body></html>
